@@ -1,0 +1,35 @@
+
+<ul id="nav">
+    <li><a ><input  type="checkbox"(click)="dolCheck($event)" [(ngModel)]="left">Left Unique Items</a></li>
+    <li><a > <input type="checkbox"  (click)="dorCheck($event)"[(ngModel)]="right">Right Unique Items</a></li>
+    <li><a > <input type="checkbox" (click)="doiCheck($event)" [(ngModel)]="identical">Files Identical</a></li>
+    <li><a ><input type="checkbox" (click)="dodCheck($event)" [(ngModel)]="different" >Files Different</a></li>
+    <div class="clear"></div>
+</ul>
+        
+
+<div class="row">
+<div class="col-md-6" style="padding: 0px">
+    <button style="width: 100%">C:\Users\kondi\OneDrive\Desktop\organisation\</button>
+</div>
+<div class="col-md-6"style="padding: 0px">
+        <button style="width: 100%">C:\Users\kondi\OneDrive\Desktop\organisation - Copy\</button>
+    </div>
+</div>
+<table style="font-family: 'Libre Baskerville', serif;">
+    <tr>
+      <th>Filename</th>
+      <th>Folder</th>
+      <th>Comparision Result</th>
+      <th>Left Date</th>
+      <th>Right Date</th>
+      <th>Extension</th>
+    </tr>
+    <tr *ngFor="let diffList of diffList" (click)="diffcheckClick(diffList.result) ">
+<td >{{diffList.filename}}</td>
+<td>{{diffList.foldername}}</td>
+<td>{{diffList.result}}</td>
+<td>{{diffList.leftDate}}</td>
+<td>{{diffList.rightDate}}</td>
+<td>{{diffList.extension}}</td>
+        </tr></table>
